@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <style>
+    ul{
+      list-style-type: none;
+    }
+    </style>
+  </head>
+  <body ng-app="chatApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container" ng-cloak>
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a ng-href="#">Home</a></li>
+          <li><a ng-href="#">About</a></li>
+          <li><a ng-href="#">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">Chat</h3>
+      </div>
+        <div class="row">
+          <div class="col-md-6" ng-controller="Ctrl1 as c1">
+          <span id="replace1"><h3><b>Enter a name of First User</b></h3></span>
+          <div class="input-group" id="button1">
+                  <input type="text" class="form-control" ng-model="c1.n1" placeholder="Type your name..">
+                  <span class="input-group-btn">
+                      <button class="btn btn-success" ng-click="name1()" type="button">Send</button>
+                  </span>
+              </div>
+                <div id="inp1" style="display:none" class="input-group">
+                  <input type="text" class="form-control" ng-model="c1.u1" placeholder="Type your message..">
+                  <span class="input-group-btn">
+                      <button class="btn btn-success" ng-click="user1()" type="button">Send</button>
+                  </span>
+                </div><!-- /input-group -->
+                <ul ng-repeat="message1 in c1.array1">
+                  <li><b>{{ message1.text }}</b></li>
+                </ul>
+          </div><!-- /.col-lg-6 -->
+        <div ng-controller="Ctrl2 as c2" class="col-md-6">
+          <span id="replace2"><h3><b>Enter a name of Second User</b></h3></span>
+          <div class="input-group" id="button2">
+                  <input type="text" class="form-control" ng-model="c2.n2" placeholder="Type your name..">
+                  <span class="input-group-btn">
+                      <button class="btn btn-success" ng-click="name2()" type="button">Send</button>
+                  </span>
+              </div>
+                <div id ="inp2" style="display:none" class="input-group">
+                  <input type="text" class="form-control" ng-model="c2.u2" placeholder="Type your message..">
+                  <span class="input-group-btn">
+                      <button class="btn btn-success" ng-click="user2()" type="button">Send</button>
+                  </span>
+                </div><!-- /input-group -->
+                <ul ng-repeat="message2 in c2.array2">
+                  <li><b>{{ message2.text }}</b></li>
+                </ul>
+          </div><!-- /.col-lg-6 -->
+        </div>
+    </div>
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
